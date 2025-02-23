@@ -4,11 +4,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node-dev --transpile-only --no-notify server.ts"
+    "start": "npx ts-node-dev --transpile-only --no-notify server.ts",
+    "keys": "npx ts-node src/config/generateRSAKeyPair.ts"
   },
   "prisma": {
-"schema": "src/models/schema.prisma"
-},
+    "schema": "src/models/schema.prisma"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -22,5 +23,11 @@
     "prisma": "^6.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@types/passport-jwt": "^4.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1"
   }
 }
