@@ -1,7 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import { Request, Response } from 'express';
-const prisma = new PrismaClient();
 
+
+const prisma = new PrismaClient();
 
 class CompraController {
   // Create Compra
@@ -85,4 +86,4 @@ class CompraController {
   }
 }
 
-module.exports = new CompraController();
+export default new CompraController();

@@ -1,12 +1,14 @@
 import { PrismaClient } from "@prisma/client";
-import { Request, Response } from 'express';
+import { Request, Response, } from 'express';
+import auth from "../config/auth";
+
 const prisma = new PrismaClient();
-//import auth from "../config/auth";
 
 class UsuarioController {
   // Create Usuario
   async createUsuario(req: Request, res: Response) {
-    const { email, name, hash, salt, cpf, tipo_usuario, telefone } = req.body;
+    const { email, name, senha, cpf, tipo_usuario, telefone } = req.body;
+    const {hash, salt} = auth.generatePassword(senha)
     try {
       const newUsuario = await prisma.usuario.create({
         data: {
@@ -87,6 +89,44 @@ class UsuarioController {
       res.status(500).json({ error: 'Erro ao deletar usuário' });
     }
   }
+  
+  async login(req: Request, res: Response) {
+
+    try {
+        
+        const {email, password} = req.body;
+
+        const usuario = await prisma.usuario.findUnique({
+            where:{ email: email}
+        });
+
+        if(!usuario)
+            return res.status(400).json({message:"usuário não existe"})
+
+        const {hash, salt} = usuario
+
+        if(!auth.checkPassword(password, hash, salt)){
+            return res.status(400).json({message:"Senha incorreta"})
+        }
+        const token = auth.generateJWT(usuario);
+
+        return res.status(201).json({message:"Token enviado" ,token: token})
+
+    } catch (error) {
+        return res.status(500).json({message: "Server Error"})
+
+    }
+  }
+
+  async testeAutenticacao(req: Request, res: Response){
+    const email = req.user as String; 
+
+    if(!email)
+        return res.status(401).json({ message: "Não autorizado"});
+
+    return res.status(201).json({message:"acesso autorizado"})
+
+  }
 }
 
-module.exports = new UsuarioController();
+export default new UsuarioController();

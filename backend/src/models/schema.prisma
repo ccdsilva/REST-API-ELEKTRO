@@ -21,7 +21,7 @@ model Usuario{
   hash String
   salt String
   cpf String @unique @db.Char(11)
-  tipo_usuario String
+  tipo_usuario Boolean @default(false)
   telefone String @unique @db.Char(11)
 
   compra Compra[]

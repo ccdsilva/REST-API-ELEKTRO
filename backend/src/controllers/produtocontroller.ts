@@ -88,4 +88,5 @@ class ProdutoController {
   }
 }
 
-module.exports = new ProdutoController();
+export default new ProdutoController();
+
