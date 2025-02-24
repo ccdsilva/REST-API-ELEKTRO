@@ -1,6 +1,6 @@
 # REST-API-ELEKTRO | TT-Dev-25.1
 
-**Status do Projeto** :  Em desenvolvimento 
+**Status do Projeto** :  Entregue no dia 06/02/2024. No entanto, alterações feitas somente para título de exercício das habilidades fullstack desenvolvidas durante o TT-Dev.1.
 
 ![Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Badge](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
@@ -85,7 +85,7 @@ $ npm start
 
   
 
-## Última atualização: 21/02/2025
+## Última atualização: 23/02/2025
 
 
 
