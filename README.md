@@ -1,6 +1,6 @@
 # REST-API-ELEKTRO | TT-Dev-25.1
 
-**Status do Projeto** :  Entregue no dia 06/02/2024. No entanto, alterações feitas somente para título de exercício das habilidades fullstack desenvolvidas durante o TT-Dev.1.
+**Status do Projeto** :  Entregue no dia 06/02/2024. No entanto, alterações feitas somente para título de exercício das habilidades fullstack desenvolvidas durante o Treinamento Tecnico para Dev da [EJCM](https://ejcm.com.br) em 2025.1.
 
 ![Badge](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Badge](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
